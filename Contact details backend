@@ -169,7 +169,6 @@
 </head>
 <body>
 
-    <!-- Menu Bar -->
     <nav>
         <div class="logo">🎉 CampusEvents</div>
         <ul>
@@ -186,7 +185,6 @@
     <!-- Contact Container -->
     <div class="contact-container">
         
-        <!-- Left Side: Info -->
         <div class="contact-info">
             <h2>Get in Touch</h2>
             <p>Have questions regarding events, registrations, or rules? Feel free to reach out to the campus management cell.</p>
@@ -207,7 +205,6 @@
             </div>
         </div>
 
-        <!-- Right Side: Form -->
         <div class="contact-form">
             <h2>Send Us a Message</h2>
             <form action="#" method="POST">
@@ -232,7 +229,6 @@
 
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Campus Event Portal | Contact Us Page</p>
     </footer>
