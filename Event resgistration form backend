@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - Campus Events</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Menu Bar / Navbar */
+        nav {
+            background-color: #1e293b;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: #38bdf8;
+        }
+
+        .nav-register-btn {
+            background-color: #38bdf8;
+            color: #0f172a !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* Form Group Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Radio Options Group */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e293b;
+            color: #94a3b8;
+            width: 100%;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Bar -->
+    <nav>
+        <div class="logo">🎉 CampusEvents</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">All Events</a></li>
+            <li><a href="#">Technical</a></li>
+            <li><a href="#">Cultural</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="register.html" class="nav-register-btn active">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Event Registration Form</h2>
+        <p>Fill out the form below to register for upcoming campus events.</p>
+
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="fullname">Full Name *</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="regno">Registration / Roll Number *</label>
+                <input type="text" id="regno" name="regno" placeholder="e.g. 12201948" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Student Email ID *</label>
+                <input type="email" id="email" name="email" placeholder="student@university.edu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department / Branch *</label>
+                <select id="department" name="department" required>
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="ece">Electronics & Communication</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="management">Management Studies</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="eventSelect">Select Event *</label>
+                <select id="eventSelect" name="eventSelect" required>
+                    <option value="" disabled selected>Choose an event</option>
+                    <option value="hackathon">Tech Hackathon 2026</option>
+                    <option value="roborace">Robo Race Challenge</option>
+                    <option value="fest">Annual Cultural Fest</option>
+                    <option value="cricket">Inter-College Cricket Cup</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Additional Remarks (Optional)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Any specific requirements or team member details..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Registration</button>
+
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Campus Event Portal | Registration Page</p>
+    </footer>
+
+</body>
+</html>
