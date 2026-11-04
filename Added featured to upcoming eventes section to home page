@@ -157,9 +157,7 @@
         }
     </style>
 </head>
-<body>
-
-    <!-- Navigation Bar -->
+<body
     <nav>
         <div class="logo">Campus Events</div>
         <ul>
@@ -169,14 +167,12 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>Welcome to Campus Event Portal</h1>
         <p>Manage and register for all university and college events easily in one place.</p>
         <a href="events.html" class="btn">Explore Events</a>
     </div>
 
-    <!-- Featured Events Section (Week 2 Addition) -->
     <div class="events-section">
         <h2>Upcoming Featured Events</h2>
         <div class="event-grid">
@@ -203,7 +199,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Campus Event Portal | Week 2 - Commit 1</p>
     </footer>
