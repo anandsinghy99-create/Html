@@ -167,8 +167,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Menu Bar -->
     <nav>
         <div class="logo">🎉 CampusEvents</div>
         <ul>
@@ -182,7 +180,6 @@
         </ul>
     </nav>
 
-    <!-- Registration Form -->
     <div class="form-container">
         <h2>Event Registration Form</h2>
         <p>Fill out the form below to register for upcoming campus events.</p>
@@ -247,7 +244,6 @@
         </form>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Campus Event Portal | Registration Page</p>
     </footer>
