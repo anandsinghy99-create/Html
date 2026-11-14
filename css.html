@@ -1,0 +1,50 @@
+<!-- Confirmation Slip Section HTML -->
+<div id="slip" class="page-section">
+    <div id="no-slip-msg" class="box-container" style="text-align: center; background: white; padding: 30px; border-radius: 10px;">
+        <h3>No Confirmation Slip Found</h3>
+        <p style="color: #64748b; margin: 10px 0 20px 0;">Please register for an event first to generate your confirmation slip.</p>
+    </div>
+
+    <div id="printable-slip" class="slip-box" style="display: none; max-width: 600px; margin: 0 auto; background: white; border: 2px dashed #1e293b; padding: 30px; border-radius: 8px;">
+        <div class="slip-header" style="text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px;">
+            <h2>🎓 CAMPUS EVENT PORTAL</h2>
+            <p style="color: #64748b; font-size: 14px;">Official Event Registration Confirmation Slip</p>
+        </div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Registration ID:</strong> <span id="slip-id"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Event Name:</strong> <span id="slip-event"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Date & Venue:</strong> <span id="slip-venue"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Student Name:</strong> <span id="slip-name"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Roll Number:</strong> <span id="slip-roll"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 15px;"><strong>Department:</strong> <span id="slip-dept"></span></div>
+        <div class="slip-row" style="display: flex; justify-content: space-between; padding: 8px 0; font-size: 15px;"><strong>Status:</strong> <span style="color: #15803d; font-weight: bold;">CONFIRMED ✅</span></div>
+        
+        <div style="text-align: center; margin-top: 25px;" class="no-print">
+            <button class="btn" onclick="window.print()" style="background-color: #2563eb; color: white; padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">🖨️ Print / Save PDF Slip</button>
+        </div>
+    </div>
+</div>
+
+<!-- Print CSS Rule (Head me lagane ke liye) -->
+<style>
+    @media print {
+        body * { visibility: hidden; }
+        #printable-slip, #printable-slip * { visibility: visible; }
+        #printable-slip { position: absolute; left: 0; top: 0; width: 100%; border: 2px solid #000; }
+        .no-print { display: none !important; }
+    }
+</style>
+
+<!-- JavaScript Function (Slip data fill karne ke liye) -->
+<script>
+    function generateSlip(regId, eventTitle, venueDate, name, roll, dept) {
+        document.getElementById('slip-id').innerText = regId;
+        document.getElementById('slip-event').innerText = eventTitle;
+        document.getElementById('slip-venue').innerText = venueDate;
+        document.getElementById('slip-name').innerText = name;
+        document.getElementById('slip-roll').innerText = roll;
+        document.getElementById('slip-dept').innerText = dept;
+
+        document.getElementById('no-slip-msg').style.display = "none";
+        document.getElementById('printable-slip').style.display = "block";
+    }
+</script>
